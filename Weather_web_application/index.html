@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="container">
+<div class="left-bar">
+    <div class="navbar">
+        <div class="icon">
+            <img src="imgs/4052984.png" alt="Weather Icon">
+        </div>
+        <div class="weathericon">
+            <a class="weather" href="index.html"><i class="fa-solid fa-cloud-sun"></i>Weather</a>
+        </div>
+        <div class="citiesicon">
+            <a class="nav-icons" href="cities.html"><i class="fa-solid fa-list"></i>Cities</a>
+        </div>
+        <div class="citiesicon">
+            <a class="map-icon" href="map.html"><i class="fa-solid fa-map"></i><br/>Map</a>
+        </div>
+        <div class="Settings">
+            <a class="nav-icons" href="settings.html"><i class="fa-solid fa-sliders"></i>Settings</a>
+        </div>
+    </div>
+</div>
+<div class="middle-bar">
+    <br><br>
+    <div class="row">
+    <div class="col-lg">
+        <div class="main-left-box">
+            <h1 id="cCity" class="main-city"></h1>
+            <p id="cRain" class="main-rain"></p>
+            <h2 id="cTemp" class="main-degree"></h2>
+        </div>
+        <div class="main-right-box">
+            <img id="mainImage" src="" alt="">
+        </div>
+    </div>
+        <div class="col-lg-2">
+            <h3 id="todayIs" class="forecast-main">Today's Forecast</h3>
+            <ul class="forecast-list">
+                <li class="forecast-item">
+                    <h1 id="dayForecastTime1" class="forecast-title">6:00 AM</h1>
+                    <img id="dayForecastIcon1" class="forecast-img" src="imgs/cloudy.png" alt="Cloudy">
+                    <p id="dayForecastTemp1" class="forecast-degree">31°</p>
+                </li>
+                <li class="forecast-item">
+                    <h1 id="dayForecastTime2" class="forecast-title">6:00 AM</h1>
+                    <img id="dayForecastIcon2" class="forecast-img" src="imgs/cloudy.png" alt="Cloudy">
+                    <p id="dayForecastTemp2" class="forecast-degree">31°</p>
+                </li>
+                <li class="forecast-item">
+                    <h1 id="dayForecastTime3" class="forecast-title">6:00 AM</h1>
+                    <img id="dayForecastIcon3" class="forecast-img" src="imgs/cloudy.png" alt="Cloudy">
+                    <p id="dayForecastTemp3" class="forecast-degree">31°</p>
+                </li>
+                <li class="forecast-item">
+                    <h1 id="dayForecastTime4" class="forecast-title">6:00 AM</h1>
+                    <img id="dayForecastIcon4" class="forecast-img" src="imgs/cloudy.png" alt="Cloudy">
+                    <p id="dayForecastTemp4" class="forecast-degree">31°</p>
+                </li>
+                <li class="forecast-item">
+                    <h1 id="dayForecastTime5" class="forecast-title">6:00 AM</h1>
+                    <img id="dayForecastIcon5" class="forecast-img" src="imgs/cloudy.png" alt="Cloudy">
+                    <p id="dayForecastTemp5" class="forecast-degree">31°</p>
+                </li>
+                <li class="forecast-item">
+                    <h1 id="dayForecastTime6" class="forecast-title">6:00 AM</h1>
+                    <img id="dayForecastIcon6" class="forecast-img" src="imgs/cloudy.png" alt="Cloudy">
+                    <p id="dayForecastTemp6" class="forecast-degree">31°</p>
+                </li>
+                <li class="forecast-item">
+                    <h1 id="dayForecastTime7" class="forecast-title">6:00 AM</h1>
+                    <img id="dayForecastIcon7" class="forecast-img" src="imgs/cloudy.png" alt="Cloudy">
+                    <p id="dayForecastTemp7" class="forecast-degree">31°</p>
+                </li>
+
+                <!-- Add more forecast items as needed -->
+            </ul>
+        </div>
+        <div class="col-lg-3">
+            <h3 class="condition-main">Air conditions</h3>
+            <div class="forecast-info">
+            <div class="row-1">
+                <div class="col-sm-1">
+                    <div class="col-sm-2">
+                        <i class="fa-solid fa-temperature-quarter"></i>
+                        <h1 class="condition-title">Real Feel</h1>
+                    </div>
+                    <p id="appTemp" class="condition-degree"></p>
+                </div>
+                <div class="col-sm-1">
+                    <div class="col-sm-2">
+                        <i class="fa-solid fa-droplet"></i>
+                        <h1 class="condition-title">Chance of Rain</h1>
+                    </div>
+                    <p id="cRain2" class="condition-degree"></p>
+                </div>
+            </div>
+            <div class="row-2">
+                <!-- Second list with two items -->
+                <div class="col-sm-1">
+                    <div class="col-sm-2">
+                        <i class="fa-solid fa-wind"></i>
+                        <h1 class="condition-title">Wind</h1>
+                    </div>
+                    <p id="wind" class="condition-degree"></p>
+                </div>
+                <div class="col-sm-1">
+                    <div class="col-sm-2">
+                        <i class="fa-solid fa-sun"></i>
+                        <h1 class="condition-title">UV Index</h1>
+                    </div>
+                    <p id="uv" class="condition-degree"></p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="right-bar">
+    <div class="week-forecast">
+        <div class="icon">
+            <h3 class="week-forecast-main">7-DAY FORECAST</h3>
+        </div>
+        <div class="col-md">
+            <div class="row-3">
+                <div class="col-sm-3">
+                    <p id="weekForecastDay1" class="forecast-day"></p>
+                </div>
+                <div class="col-sm-4">
+                    <img id="weekForecastIcon1" src="imgs/sunny.png" alt="sunny">
+                    <p id="weekForecastDesc1" class="forecast-img"></p>
+                </div>
+                <div class="col-sm-3">
+                    <p id="weekForecastTemp1" class="forecast-temp"></p>
+                </div>
+            </div>
+            <div class="row-3">
+                <div class="col-sm-3">
+                    <p id="weekForecastDay2" class="forecast-day"></p>
+                </div>
+                <div class="col-sm-4">
+                    <img id="weekForecastIcon2" src="imgs/sunny.png" alt="sunny">
+                    <p id="weekForecastDesc2" class="forecast-img"></p>
+                </div>
+                <div class="col-sm-3">
+                    <p id="weekForecastTemp2" class="forecast-temp"></p>
+                </div>
+            </div>
+            <div class="row-3">
+                <div class="col-sm-3">
+                    <p id="weekForecastDay3" class="forecast-day"></p>
+                </div>
+                <div class="col-sm-4">
+                    <img id="weekForecastIcon3" src="imgs/sunny.png" alt="sunny">
+                    <p id="weekForecastDesc3" class="forecast-img"></p>
+                </div>
+                <div class="col-sm-3">
+                    <p id="weekForecastTemp3" class="forecast-temp"></p>
+                </div>
+            </div>
+            <div class="row-3">
+                <div class="col-sm-3">
+                    <p id="weekForecastDay4" class="forecast-day"></p>
+                </div>
+                <div class="col-sm-4">
+                    <img id="weekForecastIcon4" src="imgs/sunny.png" alt="sunny">
+                    <p id="weekForecastDesc4" class="forecast-img"></p>
+                </div>
+                <div class="col-sm-3">
+                    <p id="weekForecastTemp4" class="forecast-temp"></p>
+                </div>
+            </div>
+            <div class="row-3">
+                <div class="col-sm-3">
+                    <p id="weekForecastDay5" class="forecast-day"></p>
+                </div>
+                <div class="col-sm-4">
+                    <img id="weekForecastIcon5" src="imgs/sunny.png" alt="sunny">
+                    <p id="weekForecastDesc5" class="forecast-img"></p>
+                </div>
+                <div class="col-sm-3">
+                    <p id="weekForecastTemp5" class="forecast-temp"></p>
+                </div>
+            </div>
+            <div class="row-3">
+                <div class="col-sm-3">
+                    <p id="weekForecastDay6" class="forecast-day"></p>
+                </div>
+                <div class="col-sm-4">
+                    <img id="weekForecastIcon6" src="imgs/sunny.png" alt="sunny">
+                    <p id="weekForecastDesc6" class="forecast-img"></p>
+                </div>
+                <div class="col-sm-3">
+                    <p id="weekForecastTemp6" class="forecast-temp"></p>
+                </div>
+            </div>
+            <div class="row-3">
+                <div class="col-sm-3">
+                    <p id="weekForecastDay7" class="forecast-day"></p>
+                </div>
+                <div class="col-sm-4">
+                    <img id="weekForecastIcon7" src="imgs/sunny.png" alt="sunny">
+                    <p id="weekForecastDesc7" class="forecast-img"></p>
+                </div>
+                <div class="col-sm-3">
+                    <p id="weekForecastTemp7" class="forecast-temp"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toSelectedTempUnit(tempInCelsius) {
+        const selectedTempUnit = localStorage.getItem('selectedTemperatureUnit');
+        if (selectedTempUnit === 'fahrenheit') {
+            return (tempInCelsius * 9/5 + 32).toFixed(2) + "°F";
+        } else {
+            return tempInCelsius.toFixed(2) + "°C";
+        }
+    }   var tempUnit = localStorage.getItem('selectedTemperatureUnit') || 'celsius';
+
+    function toSelectedWindSpeedUnit(speedInMeterPerSec) {
+        const selectedWindSpeedUnit = localStorage.getItem('selectedSpeedUnit');
+        if (selectedWindSpeedUnit === 'km/h') {
+            return (speedInMeterPerSec * 3.6).toFixed(2) + " km/h"
+        } else {
+            return speedInMeterPerSec.toFixed(2) + " m/s";
+        }
+    }
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const {latitude, longitude} = position.coords;
+            const apiKey = 'a2673531d0754d699184419eb6680596';
+
+            try {
+                const geocodingResponse = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`);
+                const { results } = await geocodingResponse.json();
+
+                if (results.length > 0) {
+                    const {city, town, country} = results[0].components;
+                    console.log(`City: ${city ?? town}, Country: ${country}`);
+
+                    try {
+                        const weatherResponse = await fetch(`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=3925b593c06c44cabcc9acbea78508ba`);
+                        if (!weatherResponse.ok) throw new Error(`HTTP error! Status: ${weatherResponse.status}`);
+                        const weatherData = await weatherResponse.json();
+
+                        const elemUpdate = (id, value) => document.getElementById(id).innerText = value;
+                        elemUpdate("cCity", city ?? town);
+                        elemUpdate("cRain", "Chance of Rain: " + weatherData.data[0].precip + "%");
+                        elemUpdate("cRain2", weatherData.data[0].precip + "%");
+                        let cTempInSelectedUnit = toSelectedTempUnit(weatherData.data[0].temp);
+                        elemUpdate("cTemp", `${cTempInSelectedUnit}°`);
+                        let appTempInSelectedUnit = toSelectedTempUnit(weatherData.data[0].temp);
+                        elemUpdate("appTemp", `${cTempInSelectedUnit}°`);
+                        elemUpdate("uv", weatherData.data[0].uv);
+                        let windSpeedInSelectedUnit = toSelectedWindSpeedUnit(weatherData.data[0].wind_spd);
+                        elemUpdate("wind", windSpeedInSelectedUnit);
+                        const {description, code} = weatherData.data[0].weather;
+                        const imageElement = document.getElementById("mainImage");
+                        imageElement.alt = description;
+
+                        if (code === 800) {
+                            imageElement.src = 'imgs/sunny.png';
+                        } else if ([801, 802, 803].includes(code)) {
+                            imageElement.src = 'imgs/partlyCloudy.png';
+                        } else if ([804, 700, 711, 721, 741, 751, 611, 612].includes(code)) {
+                            imageElement.src = 'imgs/cloudy.png';
+                        } else if ([900, 522, 520, 511, 502, 501, 500, 300, 301, 302].includes(code)) {
+                            imageElement.src = 'imgs/rain.png';
+                        } else {
+                            imageElement.src = 'imgs/partlyCloudy.png';
+                        }
+                    } catch (e) {
+                        console.error('Weather API fetch error:', e);
+                    }
+                } else {
+                    console.error("No results found");
+                }
+            } catch (e) {
+                console.error("Error fetching geocoding data:", e);
+            }
+        }, error => {
+            const ACCESS_DENIED = 'Permission to access geolocation was denied. Please enable location services in your browser settings.';
+            console.error(error.code === error.PERMISSION_DENIED ? ACCESS_DENIED : `Error getting geolocation: ${error.message}`);
+        });
+    } else {
+        console.error("Geolocation is not supported by this browser.");
+    }
+
+    const apiUrl = `https://api.weatherbit.io/v2.0/forecast/hourly?city=Cairo&country=EG&key=3925b593c06c44cabcc9acbea78508ba&start_date=${new Date().toISOString().split('T')[0]}&hours=24`;
+
+    const setIcon = (id, desc, code) => {
+        const imgSrcBase = 'imgs/';
+        const imgElement = document.getElementById(id);
+        imgElement.alt = desc;
+        imgElement.src = [800].includes(code) ? `${imgSrcBase}sunny.png` :
+            [801,802,803].includes(code) ? `${imgSrcBase}partlyCloudy.png` :
+                [804,700,711,721,741,751,611,612].includes(code) ? `${imgSrcBase}cloudy.png` :
+                    [900,522,520,511,502,501,500,300,301,302].includes(code) ? `${imgSrcBase}rain.png` :
+                        `${imgSrcBase}partlyCloudy.png`;
+    }
+
+    fetch(apiUrl)
+        .then(response => response.ok ? response.json() : Promise.reject(`HTTP error! Status: ${response.status}`))
+        .then(data => {
+
+            for (let i = 0; i < 7; i++) {
+                const index = i * 3;
+                document.getElementById(`dayForecastTime${i + 1}`).innerHTML = `${index}:00`;
+                let dayForecastTempInSelectedUnit = toSelectedTempUnit(data.data[index].temp);
+                document.getElementById(`dayForecastTemp${i + 1}`).innerHTML = `${dayForecastTempInSelectedUnit}°`;                setIcon(`dayForecastIcon${i + 1}`, data.data[index].weather.description, data.data[index].weather.code);
+            }
+
+            fetch('https://api.weatherbit.io/v2.0/forecast/daily?city=Cairo&country=EG&key=3925b593c06c44cabcc9acbea78508ba')
+                .then(response => response.ok ? response.json() : Promise.reject(`HTTP error! Status: ${response.status}`))
+                .then(data => {
+                    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                    let currentDay = new Date().getDay();
+
+                    for (let i = 0; i < 7; i++) {
+                        let nextDayIndex = (currentDay + i) % 7;
+                        document.getElementById(`weekForecastDay${i + 1}`).innerHTML = daysOfWeek[nextDayIndex];
+                        document.getElementById(`weekForecastDesc${i + 1}`).innerHTML = data.data[i].weather.description;
+                        let weekForecastHighTempInSelectedUnit = toSelectedTempUnit(data.data[i].high_temp);
+                        let weekForecastLowTempInSelectedUnit = toSelectedTempUnit(data.data[i].low_temp);
+                        setIcon(`weekForecastIcon${i + 1}`, data.data[i].weather.description, data.data[i].weather.code);
+                        document.getElementById(`weekForecastTemp${i + 1}`).innerHTML = `${weekForecastHighTempInSelectedUnit}°/${weekForecastLowTempInSelectedUnit}°`;
+                    }
+                });
+        });
+
+</script>
+</body>
+</html>

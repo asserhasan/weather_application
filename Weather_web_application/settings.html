@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body class="container">
+<div class="left-bar">
+    <div class="navbar">
+        <div class="icon">
+            <img src="imgs/4052984.png" alt="Weather Icon">
+        </div>
+        <div class="weathericon">
+            <a class="nav-icons" href="index.html"><i class="fa-solid fa-cloud-sun"></i>Weather</a>
+        </div>
+        <div class="citiesicon">
+            <a class="nav-icons" href="cities.html"><i class="fa-solid fa-list"></i>Cities</a>
+        </div>
+        <div class="citiesicon">
+            <a class="map-icon" href="map.html"><i class="fa-solid fa-map"></i><br/>Map</a>
+        </div>
+        <div class="Settings">
+            <a class="weather" href="settings.html"><i class="fa-solid fa-sliders"></i>Settings</a>
+        </div>
+    </div>
+</div>
+<div class="middle-bar">
+    <br><br>
+    <h2 class="units-title">Units</h2>
+    <div class="units">
+        <div class="temperature">
+            <h3 class="temp-title">TEMPERATURE</h3>
+        </div>
+        <div class="temp" id="temp-btn">
+            <button class="unit-btn button">Celsius</button>
+            <button class="unit-btn button">Fahrenheit</button>
+        </div>
+        <div class="temperature">
+            <h3 class="temp-title">WIND SPEED</h3>
+        </div>
+        <div class="temp" id="m_s-btn">
+            <button class="unit-btn button">km/h</button>
+            <button class="unit-btn button">m/s</button>
+        </div>
+
+    </div>
+    <h2 class="units-title">General</h2>
+    <div class="general">
+        <div class="general-box1">
+            <div class="temperature">
+                <h3 class="general-title">12-Hour Time</h3>
+            </div>
+            <div class="toggle-btn">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+        <div class="general-box">
+            <div class="temperature">
+                <h3 class="notifications-title">Location</h3>
+                <p class="notify-desc">Get weather of your location</p>
+            </div>
+            <div class="toggle-btn">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function getSelectedUnit(category) {
+        return localStorage.getItem(`selected${category}Unit`);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        function getSelectedUnit(category) {
+            return localStorage.getItem(`selected${category}Unit`);
+        }
+
+        function saveSelectedUnit(category, unit) {
+            localStorage.setItem(`selected${category}Unit`, unit);
+        }
+
+        function setupButtons(category, buttonSelector) {
+            const buttons = document.querySelectorAll(`${buttonSelector} button`);
+            const selectedUnit = getSelectedUnit(category);
+
+            buttons.forEach(button => {
+                // Add this condition to check the selected button
+                if (button.innerText.toLowerCase() === selectedUnit) {
+                    button.classList.add("selected");
+                }
+
+                button.addEventListener("click", function () {
+                    buttons.forEach(button => button.classList.remove("selected"));
+                    this.classList.add("selected");
+                    saveSelectedUnit(category, this.innerText.toLowerCase());
+                });
+            });
+        }
+        setupButtons("Temperature", "#temp-btn");
+        setupButtons("Precipitation", "#prec-btn");
+        setupButtons("Speed", "#m_s-btn");
+
+        function setupCheckbox(name, checkboxSelector) {
+            const checkbox = document.querySelector(checkboxSelector);
+            const itemKey = `checkbox${name}Checked`;
+
+            const initialChecked = localStorage.getItem(itemKey);
+            if (initialChecked) {
+                checkbox.checked = initialChecked === 'true';
+            }
+
+            checkbox.addEventListener('change', function () {
+                localStorage.setItem(itemKey, this.checked);
+            });
+        }
+        setupCheckbox('12HourTime', '.general-box1 input[type="checkbox"]');
+        setupCheckbox('Location', '.general-box input[type="checkbox"]');
+        setupCheckbox('Notifications', '.notifications input[type="checkbox"]');
+    });
+</script>
+</body>
+</html>
